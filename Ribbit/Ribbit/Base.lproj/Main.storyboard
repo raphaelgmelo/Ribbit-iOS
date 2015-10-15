@@ -92,11 +92,49 @@
                             <outlet property="delegate" destination="m72-Vg-Yss" id="Fgt-9x-9QY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IYc-x5-hjQ"/>
+                    <navigationItem key="navigationItem" title="Friends" id="IYc-x5-hjQ">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="r4d-sL-YWU">
+                            <connections>
+                                <segue destination="cmu-LM-Dkx" kind="show" id="1aE-dK-IyF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caz-Oj-B83" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2066" y="164"/>
+        </scene>
+        <!--Edit Friends-->
+        <scene sceneID="0jP-vf-Pzq">
+            <objects>
+                <tableViewController id="cmu-LM-Dkx" customClass="EditFriendsViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qkW-OA-7pS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Ute-ax-n9y">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ute-ax-n9y" id="E7e-Nq-FqA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cmu-LM-Dkx" id="8qa-pv-yCM"/>
+                            <outlet property="delegate" destination="cmu-LM-Dkx" id="4n5-PG-Iml"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Friends" id="vv0-Bx-E2f"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yom-IY-qWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2794" y="167"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="e2U-8D-Ne9">

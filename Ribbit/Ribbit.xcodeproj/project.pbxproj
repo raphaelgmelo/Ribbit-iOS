@@ -33,6 +33,7 @@
 		AE4233791BCFFE3A00D0F8B4 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4233781BCFFE3A00D0F8B4 /* libsqlite3.tbd */; };
 		AE42337C1BD0053200D0F8B4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE42337B1BD0053200D0F8B4 /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE42337F1BD0054300D0F8B4 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE42337E1BD0054300D0F8B4 /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		AE42337B1BD0053200D0F8B4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AE42337D1BD0054300D0F8B4 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		AE42337E1BD0054300D0F8B4 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		AE6FCA511BD0474100ADACA7 /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
+		AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				AE17596E1BCFB582004E31BC /* AppDelegate.h */,
 				AE17596F1BCFB582004E31BC /* AppDelegate.m */,
 				AE1759741BCFB582004E31BC /* Main.storyboard */,
+				AE6FCA511BD0474100ADACA7 /* EditFriendsViewController.h */,
+				AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */,
 				AE42337A1BD0053200D0F8B4 /* LoginViewController.h */,
 				AE42337B1BD0053200D0F8B4 /* LoginViewController.m */,
 				AE42337D1BD0054300D0F8B4 /* SignupViewController.h */,
@@ -242,6 +247,7 @@
 			files = (
 				AE42337C1BD0053200D0F8B4 /* LoginViewController.m in Sources */,
 				AE1759901BCFC419004E31BC /* InboxViewController.m in Sources */,
+				AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */,
 				AE1759701BCFB582004E31BC /* AppDelegate.m in Sources */,
 				AE17596D1BCFB582004E31BC /* main.m in Sources */,
 				AE42337F1BD0054300D0F8B4 /* SignupViewController.m in Sources */,
