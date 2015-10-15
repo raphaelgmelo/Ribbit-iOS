@@ -12,6 +12,7 @@
 		AE1759761BCFB582004E31BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1759741BCFB582004E31BC /* Main.storyboard */; };
 		AE1759781BCFB582004E31BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE1759771BCFB582004E31BC /* Assets.xcassets */; };
 		AE17597B1BCFB582004E31BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE1759791BCFB582004E31BC /* LaunchScreen.storyboard */; };
+		AE1759901BCFC419004E31BC /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE17598F1BCFC419004E31BC /* InboxViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,8 @@
 		AE1759771BCFB582004E31BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE17597A1BCFB582004E31BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE17597C1BCFB582004E31BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE17598E1BCFC419004E31BC /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
+		AE17598F1BCFC419004E31BC /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,8 @@
 		AE17596A1BCFB582004E31BC /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				AE17598E1BCFC419004E31BC /* InboxViewController.h */,
+				AE17598F1BCFC419004E31BC /* InboxViewController.m */,
 				AE17596E1BCFB582004E31BC /* AppDelegate.h */,
 				AE17596F1BCFB582004E31BC /* AppDelegate.m */,
 				AE1759741BCFB582004E31BC /* Main.storyboard */,
@@ -145,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE1759901BCFC419004E31BC /* InboxViewController.m in Sources */,
 				AE1759701BCFB582004E31BC /* AppDelegate.m in Sources */,
 				AE17596D1BCFB582004E31BC /* main.m in Sources */,
 			);
