@@ -17,8 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    if (currentUser){
+        NSLog(@"Current user: %@", currentUser.username);
+    }
+    else{
+       [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
 
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
+
     
 }
 
@@ -33,6 +42,23 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
     return 0;
+}
+
+- (IBAction)logout:(id)sender {
+    
+    
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    if ([segue.identifier isEqualToString:@"showLogin"] ) {
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
+    
 }
 
 @end

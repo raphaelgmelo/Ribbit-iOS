@@ -51,7 +51,13 @@
                             <outlet property="delegate" destination="J2E-85-fva" id="ZtZ-dk-Ll5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ribbit" id="cwU-J0-2w5"/>
+                    <navigationItem key="navigationItem" title="Ribbit" id="cwU-J0-2w5">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ale-GL-8k4">
+                            <connections>
+                                <action selector="logout:" destination="J2E-85-fva" id="Oce-vH-J5w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="hb1-MH-LnT" kind="show" identifier="showLogin" id="CWo-te-E7F"/>
                     </connections>
