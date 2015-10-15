@@ -95,7 +95,7 @@
                     <navigationItem key="navigationItem" title="Friends" id="IYc-x5-hjQ">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="r4d-sL-YWU">
                             <connections>
-                                <segue destination="cmu-LM-Dkx" kind="show" id="1aE-dK-IyF"/>
+                                <segue destination="cmu-LM-Dkx" kind="show" identifier="showEditFriends" id="1aE-dK-IyF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
