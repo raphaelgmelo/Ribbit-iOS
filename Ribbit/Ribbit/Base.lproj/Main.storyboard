@@ -290,6 +290,9 @@
                                         <exclude reference="6KJ-ez-aGL"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="login:" destination="hb1-MH-LnT" eventType="touchUpInside" id="JH2-Lg-xAb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6v-k8-Am7">
                                 <rect key="frame" x="211" y="286" width="179" height="21"/>
@@ -370,6 +373,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="Ih3-jY-Owo" id="mGJ-9i-wzO"/>
+                        <outlet property="usernameField" destination="tvx-u3-vWa" id="a8y-rS-UOg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgB-GM-Y6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
