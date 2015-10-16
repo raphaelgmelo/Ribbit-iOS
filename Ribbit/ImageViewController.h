@@ -16,4 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+- (void) timeout;
+
 @end
