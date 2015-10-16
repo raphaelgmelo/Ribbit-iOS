@@ -270,7 +270,7 @@
                             <outlet property="delegate" destination="jS8-jK-trd" id="pON-su-sh7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="79j-Us-f0y"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="79j-Us-f0y"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWd-3p-85e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
