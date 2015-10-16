@@ -163,18 +163,84 @@
 
 #pragma mark - IBActions
 
+
 - (IBAction)cancel:(id)sender {
-    self.image = nil;
-    self.videoFilePath = nil;
-    [self.recipients removeAllObjects];
-    
+    [self reset];
     [self.tabBarController setSelectedIndex:0];
 }
 
 - (IBAction)send:(id)sender {
     
+    if (self.image == nil && self.videoFilePath.length == 0) {
+        // image or file not set
+        
+        UIAlertController * alertController = [UIAlertController
+                                               alertControllerWithTitle:@"Try again!"
+                                               message: @"Please capture or select a photo or video to share!"
+                                               preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 //Do some thing here
+                                 [self dismissViewControllerAnimated:YES completion:nil];
+                                 
+                             }];
+        [alertController addAction:ok]; // add action to uialertcontroller
+
+        [self presentViewController:self.imagePicker animated:NO completion:nil];
+        
+    }
+    else{
+        
+        [self uploadMessage];
+        [self reset];
+        [self.tabBarController setSelectedIndex:0];
+        
+    }
+    
 }
 
 
+
+#pragma mark - Helper methods
+
+
+- (void)uploadMessage{
+
+    // Check if it's a image or video
+    if (self.image != nil) {
+        //is image
+        UIImage *newImage = [self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
+    }
+    
+    // If image, shrink it
+    // Upload the file itself
+    // Upload the message details
+    
+
+}
+
+- (void)reset {
+    self.image = nil;
+    self.videoFilePath = nil;
+    [self.recipients removeAllObjects];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float) height{
+
+    CGSize newSize = CGSizeMake(width, height);
+    CGRect newRectangle = CGRectMake(0, 0, width, height);
+    
+    UIGraphicsBeginImageContext(newSize);
+    [image drawInRect:newRectangle];
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+
+}
 
 @end
