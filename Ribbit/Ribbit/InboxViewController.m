@@ -17,41 +17,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    PFUser *currentUser = [PFUser currentUser];
-    
-    if (currentUser){
-        NSLog(@"Current user: %@", currentUser.username);
-    }
-    else{
-       [self performSegueWithIdentifier:@"showLogin" sender:self];
-    }
-
-
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
-    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
-     
-    [query orderByDescending:@"createdAt"];
     
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+    [self.navigationController.navigationBar setHidden:NO];
+    
+    PFUser *currentUser = [PFUser currentUser];
+    
+    if (currentUser){
+        NSLog(@"Current user: %@", currentUser.username);
         
-        if (error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        else{
-            //found messages
-            self.messages = objects;
-            [self.tableView reloadData];
-            NSLog(@"Retrieved %d messages", [self.messages count]);
-        }
+        PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+        [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+         
+        [query orderByDescending:@"createdAt"];
         
-    }];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            
+            if (error) {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+            else{
+                //found messages
+                self.messages = objects;
+                [self.tableView reloadData];
+                NSLog(@"Retrieved %d messages", [self.messages count]);
+            }
+            
+        }];
+        
+    }
+    else{
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
     
 }
 
