@@ -247,14 +247,14 @@
         <!--Camera-->
         <scene sceneID="2bH-Nu-nl0">
             <objects>
-                <tableViewController title="Camera" id="jS8-jK-trd" sceneMemberID="viewController">
+                <tableViewController title="Camera" id="jS8-jK-trd" customClass="CameraViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2U8-LW-jxJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FOA-c6-RDb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="FOA-c6-RDb">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FOA-c6-RDb" id="KX8-bc-q8n">
@@ -270,7 +270,18 @@
                             <outlet property="delegate" destination="jS8-jK-trd" id="pON-su-sh7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recipients" id="79j-Us-f0y"/>
+                    <navigationItem key="navigationItem" title="Recipients" id="79j-Us-f0y">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Ri9-4m-STG">
+                            <connections>
+                                <action selector="cancel:" destination="jS8-jK-trd" id="yq9-Q2-JAn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="0OO-3p-4En">
+                            <connections>
+                                <action selector="send:" destination="jS8-jK-trd" id="lJK-iS-uDq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWd-3p-85e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,7 +480,7 @@
         <!--Camera-->
         <scene sceneID="eoQ-vu-fhb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vi5-pn-mdZ" customClass="CameraViewController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vi5-pn-mdZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="fbU-a4-dhG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5iO-9H-Wq6">

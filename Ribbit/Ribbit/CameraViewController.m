@@ -17,13 +17,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    self.recipients = [[NSMutableArray alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     
-    
     [super viewWillAppear:animated];
+    
+    
+    PFQuery *query = [self.friendsRelation query];
+    [query orderByAscending:@"username"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error){
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else{
+            self.friends = objects;
+            
+            // Update table view
+            [self.tableView reloadData];
+        }
+    }];
     
     
     if (self.image == nil && [self.videoFilePath length] == 0) {
@@ -59,9 +76,29 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.friends.count;
 }
 
+
+
+#pragma mark - Table View delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+
+    if (cell.accessoryType == UITableViewCellAccessoryNone) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        [self.recipients addObject:user.objectId];
+    }
+    else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [self.recipients removeObject:user.objectId];
+    }
+    
+}
 
 #pragma mark - Image Picker Controller delegate
 
@@ -101,6 +138,40 @@
     }
 
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    PFUser *friend = [self.friends objectAtIndex:indexPath.row];
+    cell.textLabel.text = friend.username;
+    
+    if ([self.recipients containsObject:friend.objectId]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    return cell;
+    
+}
+
+#pragma mark - IBActions
+
+- (IBAction)cancel:(id)sender {
+    self.image = nil;
+    self.videoFilePath = nil;
+    [self.recipients removeAllObjects];
+    
+    [self.tabBarController setSelectedIndex:0];
+}
+
+- (IBAction)send:(id)sender {
     
 }
 
