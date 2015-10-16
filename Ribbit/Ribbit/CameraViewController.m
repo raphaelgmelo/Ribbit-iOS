@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
     self.recipients = [[NSMutableArray alloc] init];
 }
@@ -83,12 +83,12 @@
 
 #pragma mark - Table View delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     PFUser *user = [self.friends objectAtIndex:indexPath.row];
-
+    
     if (cell.accessoryType == UITableViewCellAccessoryNone) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         [self.recipients addObject:user.objectId];
@@ -136,7 +136,7 @@
             }
         }
     }
-
+    
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
@@ -189,14 +189,13 @@
                                  
                              }];
         [alertController addAction:ok]; // add action to uialertcontroller
-
+        
         [self presentViewController:self.imagePicker animated:NO completion:nil];
         
     }
     else{
         
         [self uploadMessage];
-        [self reset];
         [self.tabBarController setSelectedIndex:0];
         
     }
@@ -209,18 +208,92 @@
 
 
 - (void)uploadMessage{
-
+    
+    NSData *fileData;
+    NSString *fileName;
+    NSString *fileType;
+    
     // Check if it's a image or video
     if (self.image != nil) {
         //is image
+        // If image, shrink it
         UIImage *newImage = [self resizeImage:self.image toWidth:320.0f andHeight:480.0f];
+        fileData = UIImagePNGRepresentation(newImage);
+        fileName = @"image.png";
+        fileType = @"image";
+    }
+    else{
+        //video
+        fileData = [NSData dataWithContentsOfFile:self.videoFilePath];
+        fileName = @"video.mov";
+        fileType = @"video";
     }
     
-    // If image, shrink it
-    // Upload the file itself
-    // Upload the message details
     
-
+    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+    
+    // Upload the file itself
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (error) {
+            
+            UIAlertController * alertController = [UIAlertController
+                                                   alertControllerWithTitle:@"An error occurred!"
+                                                   message: @"Please try sending your message again!"
+                                                   preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction
+                                 actionWithTitle:@"OK"
+                                 style:UIAlertActionStyleDefault
+                                 handler:^(UIAlertAction * action)
+                                 {
+                                     //Do some thing here
+                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                     
+                                 }];
+            [alertController addAction:ok]; // add action to uialertcontroller
+            
+        }
+        else{
+            PFObject *message = [PFObject objectWithClassName:@"Messages"];
+            
+            [message setObject:file forKey:@"file"];
+            [message setObject:fileType forKey:@"fileType"];
+            [message setObject:self.recipients forKey:@"recipientsIds"];
+            [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
+            [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
+            [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (error) {
+                    
+                    UIAlertController * alertController = [UIAlertController
+                                                           alertControllerWithTitle:@"An error occurred!"
+                                                           message: @"Please try sending your message again!"
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"OK"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action)
+                                         {
+                                             //Do some thing here
+                                             [self dismissViewControllerAnimated:YES completion:nil];
+                                             
+                                         }];
+                    [alertController addAction:ok]; // add action to uialertcontroller
+                    
+                }
+                else{
+                    // everything was successful
+                    [self reset];
+                }
+            }];
+            
+            
+        }
+    }];
+    
+    
+    
+    
 }
 
 - (void)reset {
@@ -230,7 +303,7 @@
 }
 
 - (UIImage *)resizeImage:(UIImage *)image toWidth:(float)width andHeight:(float) height{
-
+    
     CGSize newSize = CGSizeMake(width, height);
     CGRect newRectangle = CGRectMake(0, 0, width, height);
     
@@ -240,7 +313,7 @@
     UIGraphicsEndImageContext();
     
     return resizedImage;
-
+    
 }
 
 @end
