@@ -36,6 +36,7 @@
 		AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE6FCA561BD051C600ADACA7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA551BD051C600ADACA7 /* FriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE6FCA5C1BD088FC00ADACA7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA5B1BD088FC00ADACA7 /* CameraViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AE7E0E7C1BD117860020582C /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E0E7B1BD117860020582C /* ImageViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		AE6FCA551BD051C600ADACA7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		AE6FCA5A1BD088FC00ADACA7 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		AE6FCA5B1BD088FC00ADACA7 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		AE7E0E7A1BD117860020582C /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
+		AE7E0E7B1BD117860020582C /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 		AE17596A1BCFB582004E31BC /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				AE7E0E7A1BD117860020582C /* ImageViewController.h */,
+				AE7E0E7B1BD117860020582C /* ImageViewController.m */,
 				AE17598E1BCFC419004E31BC /* InboxViewController.h */,
 				AE17598F1BCFC419004E31BC /* InboxViewController.m */,
 				AE17596E1BCFB582004E31BC /* AppDelegate.h */,
@@ -261,6 +266,7 @@
 				AE6FCA561BD051C600ADACA7 /* FriendsViewController.m in Sources */,
 				AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */,
 				AE1759701BCFB582004E31BC /* AppDelegate.m in Sources */,
+				AE7E0E7C1BD117860020582C /* ImageViewController.m in Sources */,
 				AE17596D1BCFB582004E31BC /* main.m in Sources */,
 				AE42337F1BD0054300D0F8B4 /* SignupViewController.m in Sources */,
 			);

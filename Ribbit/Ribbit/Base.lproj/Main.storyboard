@@ -60,11 +60,46 @@
                     </navigationItem>
                     <connections>
                         <segue destination="hb1-MH-LnT" kind="show" identifier="showLogin" id="CWo-te-E7F"/>
+                        <segue destination="Ozi-CK-jXa" kind="show" identifier="showImage" id="8tY-sO-71K"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YkB-nb-n00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2066" y="-604"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="U6Y-3U-N4b">
+            <objects>
+                <viewController id="Ozi-CK-jXa" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HVl-jT-RKo"/>
+                        <viewControllerLayoutGuide type="bottom" id="gAG-Vr-3VH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xkc-xY-sBk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Hk-36-bWS">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Hk-36-bWS" firstAttribute="leading" secondItem="Xkc-xY-sBk" secondAttribute="leading" id="3mL-fO-Sxi"/>
+                            <constraint firstItem="gAG-Vr-3VH" firstAttribute="top" secondItem="0Hk-36-bWS" secondAttribute="bottom" id="JJV-07-AW1"/>
+                            <constraint firstItem="0Hk-36-bWS" firstAttribute="top" secondItem="HVl-jT-RKo" secondAttribute="bottom" id="ehX-sb-BUz"/>
+                            <constraint firstAttribute="trailing" secondItem="0Hk-36-bWS" secondAttribute="trailing" id="pIK-3V-xG6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="0Hk-36-bWS" id="gVM-mT-0e1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQ3-Yt-BY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2962" y="-1617"/>
         </scene>
         <!--Friends-->
         <scene sceneID="DFE-Mz-o1g">
@@ -242,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQI-nU-Uid" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4302" y="-236"/>
+            <point key="canvasLocation" x="4372" y="-604"/>
         </scene>
         <!--Camera-->
         <scene sceneID="2bH-Nu-nl0">
@@ -435,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgB-GM-Y6L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="-236"/>
+            <point key="canvasLocation" x="3612" y="-604"/>
         </scene>
         <!--Inbox-->
         <scene sceneID="H62-OA-9zS">
