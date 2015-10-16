@@ -469,7 +469,7 @@
         <!--Camera-->
         <scene sceneID="eoQ-vu-fhb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vi5-pn-mdZ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vi5-pn-mdZ" customClass="CameraViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Camera" image="camera" id="fbU-a4-dhG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5iO-9H-Wq6">

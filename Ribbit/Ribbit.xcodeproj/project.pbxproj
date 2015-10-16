@@ -35,6 +35,7 @@
 		AE42337F1BD0054300D0F8B4 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE42337E1BD0054300D0F8B4 /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE6FCA561BD051C600ADACA7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA551BD051C600ADACA7 /* FriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AE6FCA5C1BD088FC00ADACA7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA5B1BD088FC00ADACA7 /* CameraViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
 		AE6FCA541BD051C600ADACA7 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		AE6FCA551BD051C600ADACA7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		AE6FCA5A1BD088FC00ADACA7 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		AE6FCA5B1BD088FC00ADACA7 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				AE17596E1BCFB582004E31BC /* AppDelegate.h */,
 				AE17596F1BCFB582004E31BC /* AppDelegate.m */,
 				AE1759741BCFB582004E31BC /* Main.storyboard */,
+				AE6FCA5A1BD088FC00ADACA7 /* CameraViewController.h */,
+				AE6FCA5B1BD088FC00ADACA7 /* CameraViewController.m */,
 				AE6FCA511BD0474100ADACA7 /* EditFriendsViewController.h */,
 				AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */,
 				AE6FCA541BD051C600ADACA7 /* FriendsViewController.h */,
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE42337C1BD0053200D0F8B4 /* LoginViewController.m in Sources */,
+				AE6FCA5C1BD088FC00ADACA7 /* CameraViewController.m in Sources */,
 				AE1759901BCFC419004E31BC /* InboxViewController.m in Sources */,
 				AE6FCA561BD051C600ADACA7 /* FriendsViewController.m in Sources */,
 				AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */,
