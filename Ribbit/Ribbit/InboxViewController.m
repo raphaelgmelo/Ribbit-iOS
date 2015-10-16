@@ -122,7 +122,34 @@
         [self performSegueWithIdentifier:@"showImage" sender:self];
     }
     else{
-//        cell.imageView.image = [UIImage imageNamed:@"icon_video"];
+        // file type is video
+        PFFile *videoFile = [self.selectedMessage objectForKey:@"file"];
+        NSURL *fileUrl = [NSURL URLWithString:videoFile.url];
+        self.moviePlayer.contentURL = fileUrl;
+        [self.moviePlayer prepareToPlay];
+        
+        [self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+        
+        // add it to the view controller so we can see it
+        [self.view addSubview:self.moviePlayer.view];
+        [self.moviePlayer setFullscreen:YES animated:YES];
+        
+        [self.moviePlayer play];
+    }
+    
+    //Delete the message
+    NSMutableArray *recipientIds = [NSMutableArray arrayWithArray:[self.selectedMessage objectForKey:@"recipientIds"]];
+    NSLog(@"Recipients: %@", recipientIds);
+    
+    if ([recipientIds count] == 1) {
+        //delete
+        [self.selectedMessage deleteInBackground];
+    }
+    else{
+        //remove the recipient
+        [recipientIds removeObject:[[PFUser currentUser] objectId]];
+        [self.selectedMessage setObject:recipientIds forKey:@"recipientIds"];
+        [self.selectedMessage saveInBackground];
     }
 }
 
