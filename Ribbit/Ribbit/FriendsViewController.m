@@ -8,6 +8,7 @@
 
 #import "FriendsViewController.h"
 #import "EditFriendsViewController.h"
+#import "GravatarUrlBuilder.h"
 
 @interface FriendsViewController ()
 
@@ -74,6 +75,18 @@
     PFUser *friend = [self.friends objectAtIndex:indexPath.row];
     
     cell.textLabel.text = friend.username;
+    
+    // Get email address
+    NSString *email = [friend objectForKey:@"email"];
+    
+    // Create the md5 hash
+    NSURL * gravatarUrl = [GravatarUrlBuilder getGravatarUrl:email];
+    
+    // Request the image from Gravatar
+    NSData *imageData = [NSData dataWithContentsOfURL:gravatarUrl];
+    
+    // Set image in cell
+    cell.imageView.image = [UIImage imageWithData:imageData];
     
     return cell;
     

@@ -36,6 +36,7 @@
 		AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA521BD0474100ADACA7 /* EditFriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE6FCA561BD051C600ADACA7 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA551BD051C600ADACA7 /* FriendsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE6FCA5C1BD088FC00ADACA7 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6FCA5B1BD088FC00ADACA7 /* CameraViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AE7C97541BD2FEC700716323 /* GravatarUrlBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7C97531BD2FEC700716323 /* GravatarUrlBuilder.m */; settings = {ASSET_TAGS = (); }; };
 		AE7E0E7C1BD117860020582C /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E0E7B1BD117860020582C /* ImageViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE7E0E7E1BD185DA0020582C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E0E7D1BD185DA0020582C /* MediaPlayer.framework */; };
 		AE7E0E801BD190EE0020582C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E0E7F1BD190EE0020582C /* AVFoundation.framework */; };
@@ -84,6 +85,8 @@
 		AE6FCA551BD051C600ADACA7 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		AE6FCA5A1BD088FC00ADACA7 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		AE6FCA5B1BD088FC00ADACA7 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		AE7C97521BD2FEC700716323 /* GravatarUrlBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravatarUrlBuilder.h; sourceTree = "<group>"; };
+		AE7C97531BD2FEC700716323 /* GravatarUrlBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravatarUrlBuilder.m; sourceTree = "<group>"; };
 		AE7E0E7A1BD117860020582C /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageViewController.h; path = ../ImageViewController.h; sourceTree = "<group>"; };
 		AE7E0E7B1BD117860020582C /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
 		AE7E0E7D1BD185DA0020582C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -149,6 +152,7 @@
 		AE17596A1BCFB582004E31BC /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				AE7C97551BD2FECC00716323 /* Gravatar */,
 				AE810AC31BD2E88D00C1E5B2 /* MSCellAccessrory */,
 				AE810AC41BD2E8AB00C1E5B2 /* TPKeyboardAvoiding */,
 				AE7E0E7A1BD117860020582C /* ImageViewController.h */,
@@ -209,6 +213,15 @@
 				AE42335C1BCFDF9100D0F8B4 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE7C97551BD2FECC00716323 /* Gravatar */ = {
+			isa = PBXGroup;
+			children = (
+				AE7C97521BD2FEC700716323 /* GravatarUrlBuilder.h */,
+				AE7C97531BD2FEC700716323 /* GravatarUrlBuilder.m */,
+			);
+			name = Gravatar;
 			sourceTree = "<group>";
 		};
 		AE810AC31BD2E88D00C1E5B2 /* MSCellAccessrory */ = {
@@ -305,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE42337C1BD0053200D0F8B4 /* LoginViewController.m in Sources */,
+				AE7C97541BD2FEC700716323 /* GravatarUrlBuilder.m in Sources */,
 				AE810AB91BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				AE810AC21BD2E4E100C1E5B2 /* UIView+AccessViewController.m in Sources */,
 				AE6FCA5C1BD088FC00ADACA7 /* CameraViewController.m in Sources */,
