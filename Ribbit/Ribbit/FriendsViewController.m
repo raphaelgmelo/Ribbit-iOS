@@ -76,17 +76,32 @@
     
     cell.textLabel.text = friend.username;
     
-    // Get email address
-    NSString *email = [friend objectForKey:@"email"];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     
-    // Create the md5 hash
-    NSURL * gravatarUrl = [GravatarUrlBuilder getGravatarUrl:email];
+    dispatch_async(queue, ^{
+        
+        // Get email address
+        NSString *email = [friend objectForKey:@"email"];
+        
+        // Create the md5 hash
+        NSURL * gravatarUrl = [GravatarUrlBuilder getGravatarUrl:email];
+        
+        // Request the image from Gravatar
+        NSData *imageData = [NSData dataWithContentsOfURL:gravatarUrl];
+        
+        if (imageData != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Set image in cell
+                cell.imageView.image = [UIImage imageWithData:imageData];
+                [cell setNeedsLayout];
+            });
+        }
+        
+    });
     
-    // Request the image from Gravatar
-    NSData *imageData = [NSData dataWithContentsOfURL:gravatarUrl];
+    cell.imageView.image = [UIImage imageNamed:@"icon_person"];
     
-    // Set image in cell
-    cell.imageView.image = [UIImage imageWithData:imageData];
+
     
     return cell;
     
