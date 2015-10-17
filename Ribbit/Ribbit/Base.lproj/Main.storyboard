@@ -190,12 +190,14 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kd1-iw-t3i">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lag-Kd-8Vr">
-                                        <rect key="frame" x="169" y="344" width="262" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lag-Kd-8Vr">
+                                        <rect key="frame" x="169" y="382" width="262" height="44"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.29411764709999999" green="0.20784313730000001" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="273" id="edA-Sk-0px"/>
+                                            <constraint firstAttribute="height" constant="44" id="hMT-RV-Rjl"/>
+                                            <constraint firstAttribute="width" constant="262" id="uEr-8K-99o"/>
                                             <constraint firstAttribute="width" constant="262" id="xrw-Ay-T35"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -205,17 +207,20 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="edA-Sk-0px"/>
+                                                <exclude reference="xrw-Ay-T35"/>
                                             </mask>
                                         </variation>
                                         <connections>
                                             <action selector="signup:" destination="VaG-ib-HdQ" eventType="touchUpInside" id="K57-1E-UtX"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piB-mg-gf5">
-                                        <rect key="frame" x="169" y="270" width="262" height="44"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="piB-mg-gf5">
+                                        <rect key="frame" x="169" y="278" width="262" height="44"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="262" id="Pvu-2y-ntf"/>
+                                            <constraint firstAttribute="height" constant="44" id="RfQ-zR-z3B"/>
                                             <constraint firstAttribute="width" constant="262" id="Y6S-Go-rSY"/>
                                             <constraint firstAttribute="width" constant="262" id="oLA-Zd-5gW"/>
                                         </constraints>
@@ -227,11 +232,13 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLk-nL-Kv7">
-                                        <rect key="frame" x="169" y="161" width="262" height="44"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BLk-nL-Kv7">
+                                        <rect key="frame" x="169" y="233" width="262" height="44"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="lhC-mA-61p"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="262" id="q3q-iX-Afp"/>
                                             <constraint firstAttribute="width" constant="262" id="uOP-Oq-gcr"/>
                                             <constraint firstAttribute="width" constant="262" id="vQM-jh-HnR"/>
                                         </constraints>
@@ -239,17 +246,20 @@
                                         <textInputTraits key="textInputTraits"/>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="q3q-iX-Afp"/>
                                                 <exclude reference="uOP-Oq-gcr"/>
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97I-Zj-0e1">
-                                        <rect key="frame" x="169" y="213" width="262" height="44"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97I-Zj-0e1">
+                                        <rect key="frame" x="169" y="323" width="262" height="44"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="262" id="Djt-pD-nWS"/>
                                             <constraint firstAttribute="width" constant="262" id="EAP-u5-km9"/>
+                                            <constraint firstAttribute="height" constant="44" id="jcj-du-vNf"/>
+                                            <constraint firstAttribute="width" constant="262" id="mTy-9i-kEn"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="262" id="vSv-o1-khi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -257,11 +267,23 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Djt-pD-nWS"/>
+                                                <exclude reference="EAP-u5-km9"/>
+                                                <exclude reference="vSv-o1-khi"/>
                                             </mask>
                                         </variation>
                                     </textField>
                                 </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstItem="Lag-Kd-8Vr" firstAttribute="top" secondItem="97I-Zj-0e1" secondAttribute="bottom" constant="15" id="JEI-6Y-XkI"/>
+                                    <constraint firstItem="97I-Zj-0e1" firstAttribute="top" secondItem="piB-mg-gf5" secondAttribute="bottom" constant="1" id="aOc-uh-fkJ"/>
+                                    <constraint firstItem="Lag-Kd-8Vr" firstAttribute="centerX" secondItem="kd1-iw-t3i" secondAttribute="centerX" id="bvq-u0-tO0"/>
+                                    <constraint firstItem="97I-Zj-0e1" firstAttribute="centerX" secondItem="kd1-iw-t3i" secondAttribute="centerX" id="iCf-wW-Wyz"/>
+                                    <constraint firstItem="piB-mg-gf5" firstAttribute="centerX" secondItem="kd1-iw-t3i" secondAttribute="centerX" id="iRR-ut-czL"/>
+                                    <constraint firstItem="BLk-nL-Kv7" firstAttribute="centerX" secondItem="kd1-iw-t3i" secondAttribute="centerX" id="n4G-K1-loP"/>
+                                    <constraint firstItem="piB-mg-gf5" firstAttribute="top" secondItem="BLk-nL-Kv7" secondAttribute="bottom" constant="1" id="w2F-W2-Xrv"/>
+                                    <constraint firstItem="piB-mg-gf5" firstAttribute="centerY" secondItem="kd1-iw-t3i" secondAttribute="centerY" id="wZm-Aw-zxd"/>
+                                </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rax-Df-yuu">
                                 <rect key="frame" x="556" y="20" width="44" height="44"/>
@@ -364,7 +386,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k9e-T2-ORp">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ih3-jY-Owo">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ih3-jY-Owo">
                                         <rect key="frame" x="169" y="278" width="262" height="44"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -383,8 +405,8 @@
                                             </mask>
                                         </variation>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-Mu-kGQ">
-                                        <rect key="frame" x="169" y="356" width="262" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdn-Mu-kGQ">
+                                        <rect key="frame" x="169" y="337" width="262" height="44"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.29411764705882354" green="0.20784313725490197" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -407,8 +429,12 @@
                                             <action selector="login:" destination="hb1-MH-LnT" eventType="touchUpInside" id="JH2-Lg-xAb"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvx-u3-vWa">
-                                        <rect key="frame" x="169" y="231" width="262" height="44"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mxb-ua-bXW">
+                                        <rect key="frame" x="359" y="392" width="262" height="44"/>
+                                        <animations/>
+                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvx-u3-vWa">
+                                        <rect key="frame" x="169" y="233" width="262" height="44"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -428,6 +454,19 @@
                                     </textField>
                                 </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstItem="cdn-Mu-kGQ" firstAttribute="top" secondItem="Ih3-jY-Owo" secondAttribute="bottom" constant="15" id="9CQ-Nx-gho"/>
+                                    <constraint firstItem="Ih3-jY-Owo" firstAttribute="centerY" secondItem="k9e-T2-ORp" secondAttribute="centerY" id="HbS-hL-tEi"/>
+                                    <constraint firstItem="cdn-Mu-kGQ" firstAttribute="centerX" secondItem="k9e-T2-ORp" secondAttribute="centerX" id="OWC-fO-7MI"/>
+                                    <constraint firstItem="tvx-u3-vWa" firstAttribute="centerX" secondItem="k9e-T2-ORp" secondAttribute="centerX" id="TEb-I7-zZp"/>
+                                    <constraint firstItem="Ih3-jY-Owo" firstAttribute="centerX" secondItem="k9e-T2-ORp" secondAttribute="centerX" id="d3y-oq-cdF"/>
+                                    <constraint firstItem="Ih3-jY-Owo" firstAttribute="top" secondItem="tvx-u3-vWa" secondAttribute="bottom" constant="1" id="vK1-xB-ElH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Mxb-ua-bXW"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6v-k8-Am7">
                                 <rect key="frame" x="198" y="556" width="142" height="44"/>
@@ -447,8 +486,8 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v1-aH-oUI">
-                                <rect key="frame" x="348" y="556" width="55" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1v1-aH-oUI">
+                                <rect key="frame" x="350" y="556" width="51" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="8dT-qD-4ad"/>
