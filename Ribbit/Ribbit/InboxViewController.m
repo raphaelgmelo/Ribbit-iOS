@@ -20,6 +20,8 @@
     [super viewDidLoad];
 }
 
+
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -31,29 +33,17 @@
     if (currentUser){
         NSLog(@"Current user: %@", currentUser.username);
         
-        PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
-        [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
-         
-        [query orderByDescending:@"createdAt"];
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            
-            if (error) {
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-            }
-            else{
-                //found messages
-                self.messages = objects;
-                [self.tableView reloadData];
-                NSLog(@"Retrieved %d messages", [self.messages count]);
-            }
-            
-        }];
+        [self retrieveMessages];
         
     }
     else{
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+    
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    
+    [self.refreshControl addTarget:self action:@selector(retrieveMessages) forControlEvents:UIControlEventValueChanged];
     
 }
 
@@ -157,6 +147,35 @@
         [self.selectedMessage setObject:recipientIds forKey:@"recipientIds"];
         [self.selectedMessage saveInBackground];
     }
+}
+
+
+
+
+- (void)retrieveMessages {
+    PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
+    [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
+    
+    [query orderByDescending:@"createdAt"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+        else{
+            //found messages
+            self.messages = objects;
+            [self.tableView reloadData];
+            NSLog(@"Retrieved %d messages", [self.messages count]);
+        }
+        
+        if ([self.refreshControl isRefreshing]) {
+            [self.refreshControl endRefreshing];
+        }
+        
+    }];
+    
 }
 
 

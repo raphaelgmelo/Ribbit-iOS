@@ -16,6 +16,7 @@
 @property (nonatomic, strong) PFObject *selectedMessage;
 
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 - (IBAction)logout:(id)sender;
 
