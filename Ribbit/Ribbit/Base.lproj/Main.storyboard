@@ -9,11 +9,12 @@
         <scene sceneID="zXy-ak-F5F">
             <objects>
                 <tabBarController id="UIV-T0-rgN" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="TlA-xa-39E">
+                    <tabBar key="tabBar" contentMode="scaleToFill" backgroundImage="tabBarBackground" selectionIndicatorImage="tabBarSelectedBackground" id="TlA-xa-39E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="USV-iF-OMa" kind="relationship" relationship="viewControllers" id="V3y-iB-sJI"/>
@@ -624,5 +625,7 @@
         <image name="icon_x" width="11" height="11"/>
         <image name="inbox" width="32" height="21"/>
         <image name="loginBackground" width="320" height="480"/>
+        <image name="tabBarBackground" width="1" height="1"/>
+        <image name="tabBarSelectedBackground" width="107" height="49"/>
     </resources>
 </document>
