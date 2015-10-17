@@ -39,6 +39,8 @@
 		AE7E0E7C1BD117860020582C /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7E0E7B1BD117860020582C /* ImageViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AE7E0E7E1BD185DA0020582C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E0E7D1BD185DA0020582C /* MediaPlayer.framework */; };
 		AE7E0E801BD190EE0020582C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7E0E7F1BD190EE0020582C /* AVFoundation.framework */; };
+		AE810AB91BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE810AB81BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		AE810ABC1BD2C4B200C1E5B2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AE810ABB1BD2C4B200C1E5B2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,10 @@
 		AE7E0E7B1BD117860020582C /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageViewController.m; path = ../ImageViewController.m; sourceTree = "<group>"; };
 		AE7E0E7D1BD185DA0020582C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		AE7E0E7F1BD190EE0020582C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AE810AB71BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		AE810AB81BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		AE810ABA1BD2C4B200C1E5B2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		AE810ABB1BD2C4B200C1E5B2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,10 @@
 		AE17596A1BCFB582004E31BC /* Ribbit */ = {
 			isa = PBXGroup;
 			children = (
+				AE810ABA1BD2C4B200C1E5B2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				AE810ABB1BD2C4B200C1E5B2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				AE810AB71BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.h */,
+				AE810AB81BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.m */,
 				AE7E0E7A1BD117860020582C /* ImageViewController.h */,
 				AE7E0E7B1BD117860020582C /* ImageViewController.m */,
 				AE17598E1BCFC419004E31BC /* InboxViewController.h */,
@@ -269,9 +279,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE42337C1BD0053200D0F8B4 /* LoginViewController.m in Sources */,
+				AE810AB91BD2C3E500C1E5B2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				AE6FCA5C1BD088FC00ADACA7 /* CameraViewController.m in Sources */,
 				AE1759901BCFC419004E31BC /* InboxViewController.m in Sources */,
 				AE6FCA561BD051C600ADACA7 /* FriendsViewController.m in Sources */,
+				AE810ABC1BD2C4B200C1E5B2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				AE6FCA531BD0474100ADACA7 /* EditFriendsViewController.m in Sources */,
 				AE1759701BCFB582004E31BC /* AppDelegate.m in Sources */,
 				AE7E0E7C1BD117860020582C /* ImageViewController.m in Sources */,
